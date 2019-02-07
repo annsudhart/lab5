@@ -14,6 +14,14 @@
 <body
   <div class="container">
 		<h1>My HCI Friends</h1>
+		{{#each friends}}
+		<div class="friends">
+			<img class="img-responsive" src="{{imageURL}}" />
+			<h3> <a href="#">{{name}}</a></h3>
+			<p> {{description}} </p>
+			<hr>
+		</div>
+		{{/each}}
 
 		<form id="addFriendForm" role="form" method="get" action="/add">
 			<h3>Add a friend</h3>
@@ -27,13 +35,6 @@
 		    </div>
 		    <input type="submit" id="submitBtn" class="btn btn-default" value="Add the friend"></input>
 		</form>
-		{{#each friends}}
-		<div class="friends">
-			<img src="{{imageURL}}" />
-			<h3> {{name}}</h3>
-			<p> {{description}} </p>
-		</div>
-		{{/each}}
   </div>
 	<script src="/js/hci-friends.js"></script>
 </body>
